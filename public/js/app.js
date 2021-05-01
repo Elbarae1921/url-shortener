@@ -22,10 +22,12 @@ function submitButtonClick() {
     })
         .then(response => response.json())
         .then(data => {
-            document.getElementById("url").style.borderColor = "#303030";
-        document.getElementById("button").style.borderColor = "#303030";
-            document.getElementById("title").innerText = data.shortUrl;
+            document.getElementById("url").classList.remove("input-error-border");
+            document.getElementById("button").classList.remove("submit-button-error-border");
+            document.getElementById("title").innerText = "test";
+            document.getElementById("title").onclick = copyTitle;
             document.getElementById("title").classList.add("copy-title");
+            document.querySelector(".title-div").classList.add("active");
         });
 }
 
@@ -36,6 +38,12 @@ function copyTitle() {
     el.select();
     document.execCommand('copy');
     document.body.removeChild(el);
+
+    const snackbar = document.querySelector("#snackbar");
+    // show the snackbar
+    snackbar.className = "show";
+    // After 4 seconds, hide the snackbar
+    setTimeout(() => snackbar.className = "", 3000);
 }
 
 function validURL(str) {
