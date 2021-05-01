@@ -28,6 +28,7 @@
 
 .title {
     font-family: monospace;
+    word-wrap: break-word;
     letter-spacing: 0.1vw;
     user-select: none;
     color: #303030;
@@ -80,14 +81,34 @@
 }
 
 .img-div {
-    margin: 1vh 4vh 1vh 2vh;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    position: absolute;
+    margin-left: 1vh;
     height: 5vh;
     width: 5vh;
+    top: 50%;
+
 }
 
 .submit-button-img {
     height: 5vh;
     width: 5vh;
+}
+
+.input-error-border {
+    border-color: red;
+    border-style: solid;
+    border-right: none;
+    border-width: 3px;
+}
+
+.submit-button-error-border {
+    box-sizing: border-box;
+    border-color: red;
+    border-style: solid;
+    border-width: 3px;
+    border-left: none;
 }
 
 a {
