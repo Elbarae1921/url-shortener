@@ -7,8 +7,9 @@
 }
 
 .blue-bottom {
+    border-bottom-right-radius: 50vw 9vh;
+    border-bottom-left-radius: 50vw 9vh;
     background: rgb(36, 146, 236);
-    border-radius: 50%;
     position: fixed;
     width: 100vw;
     height: 35vh;
@@ -16,16 +17,21 @@
     z-index: -1;
 }
 
-.title {
-    font-family: Helvetica, sans-serif;
-    text-align: center;
+.title-div {
     position: absolute;
-    user-select: none;
-    color: white;
-    font-size: 7vh;
+    text-align: center;
+    width: 40vw;
+    left: 30vw;
     top: 30vh;
     right: 0;
-    left: 0;
+}
+
+.title {
+    font-family: monospace;
+    letter-spacing: 0.1vw;
+    user-select: none;
+    color: #303030;
+    font-size: 6vh;
 }
 
 .copy-title {
@@ -33,65 +39,71 @@
 }
 
 .footer {
-    background-color: #9b9b9b;
+    background-color: #303030;
+    padding: 1vh 1vw 1vh 1vw;
     position: absolute;
-    padding-right: 1vw;
-    padding-left: 1vw;
-    padding-top: 1vh;
-    height: 4vh;
+    height: 3vh;
     width: 98vw;
     top: 95vh;
 }
 
 .input-area {
-    padding-left: 20vw;
+    padding-left: 25vw;
     position: fixed;
+    display: flex;
+    height: 7vh;
+    width: 50vw;
     top: 50vh;
 }
 
 .url-in {
-    border-bottom-left-radius: 25px;
-    border-top-left-radius: 25px;
-    padding-bottom: 0.5vw;
-    padding-top: 0.5vw;
+    padding: 0.5vh 0 0.5vh 1.5vw;
+    background-color: #303030;
+    border-radius: 7vh 0 0 7vh;
     border-style: none;
-    padding-left: 1vw;
     font-size: 4vh;
+    color: white;
+    width: inherit;
     outline: none;
-    width: 49vw;
 }
 
 .submit-button {
-    border-bottom-right-radius: 25px;
-    border-top-right-radius: 25px;
-    padding-bottom: 0.5vw;
-    padding-top: 0.5vw;
-    border-style: none;
-    font-size: 4vh;
-    outline: none;
-    width: 10vw;
+    background-color: #303030;
+    border-radius: 0 7vh 7vh 0;
+    height: inherit;
+    width: 10vh;
 }
 
-input[type="button"]:hover {
-    background-color: rgb(194, 194, 194);
+.submit-button:hover {
+    background-color: #4b4b4b;
     cursor: pointer;
 }
 
+.img-div {
+    margin: 1vh 4vh 1vh 2vh;
+    height: 5vh;
+    width: 5vh;
+}
+
+.submit-button-img {
+    height: 5vh;
+    width: 5vh;
+}
+
 a {
-    font-family: Helvetica, sans-serif;
-    text-decoration: none;
+    font-family: monospace;
     text-decoration: none;
     font-weight: bold;
-    color: black;
+    color: white;
     font-size: 3vh;
 }
 
 body {
-    background-color: #d6d6d6;
+    background-color: #303030;
     padding: 0;
     margin: 0;
 }
 
 button {
-    font-family: Helvetica, sans-serif; 
+    font-family: monospace; 
 }

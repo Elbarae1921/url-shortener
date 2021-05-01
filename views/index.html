@@ -1,20 +1,30 @@
 <!DOCTYPE html>
 
+<html>
+
 <head>
     <meta charset="UTF-8">
-    <link rel="icon" href="http://cdn.0xffset.de/url_shortener_icon.png">
+    <link rel="icon" href="http://cdn.0xffset.de/url_shortener_icon.svg">
     <link href="/css/style.css" rel="stylesheet">
     <title>URL shortener</title>
 </head>
 
 <body>
     <div class="blue-top">
-        <h1 class="title" id="title" onclick="copyTitle()">
-            0xffset's url-shortener
-        </h1>
+        <div class="title-div">
+            <h1 class="title" id="title" onclick="copyTitle()">
+                0xffset&#700;s url shortener
+            </h1>
+        </div>
+
         <div class="blue-bottom">
             <div class="input-area">
-                <input type="text" class="url-in" id="url"><input type="button" class="submit-button" value="Shorten" onclick="submitButtonClick()">
+                <input type="text" class="url-in" id="url">
+                <div class="submit-button" onclick="submitButtonClick()">
+                    <div class="img-div">
+                        <img src="http://cdn.0xffset.de/url_shortener_icon.svg" class="submit-button-img">
+                    </div>
+                </div>
             </div>
         </div>
     </div>

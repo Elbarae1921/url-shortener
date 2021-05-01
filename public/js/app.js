@@ -1,6 +1,11 @@
 function submitButtonClick() {
     let url = document.getElementById("url").value.trim();
 
+    if (url == "") {
+        return;
+    }
+
+    // TODO: change
     if (!url.startsWith("http://") && !url.startsWith("https://")) {
         url = "https://" + url;
     }
