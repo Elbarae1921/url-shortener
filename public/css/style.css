@@ -33,6 +33,7 @@
     user-select: none;
     color: #303030;
     font-size: 6vh;
+    margin: 0;
 }
 
 .copy-title {
@@ -130,7 +131,7 @@ button {
     visibility: hidden;
     min-width: 250px;
     margin-left: -125px;
-    background-color: #fff;
+    background-color: rgb(36, 146, 236);
     color: #333;
     text-align: center;
     border-radius: 2px;

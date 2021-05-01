@@ -8,6 +8,11 @@ function submitButtonClick() {
     if (!validURL(url)) {
         document.getElementById("url").style.borderColor = "red";
         document.getElementById("button").style.borderColor = "red";
+
+        document.getElementById("title").onclick = () => {};
+        document.getElementById("title").classList.remove("copy-title");
+
+        document.querySelector(".title-div").classList.remove("active");
         return;
     }
 
@@ -22,11 +27,13 @@ function submitButtonClick() {
     })
         .then(response => response.json())
         .then(data => {
-            document.getElementById("url").classList.remove("input-error-border");
-            document.getElementById("button").classList.remove("submit-button-error-border");
-            document.getElementById("title").innerText = "test";
+            document.getElementById("url").style.borderColor = "#303030";
+            document.getElementById("button").style.borderColor = "#303030";
+
+            document.getElementById("title").innerText = data.shortUrl;
             document.getElementById("title").onclick = copyTitle;
             document.getElementById("title").classList.add("copy-title");
+
             document.querySelector(".title-div").classList.add("active");
         });
 }
