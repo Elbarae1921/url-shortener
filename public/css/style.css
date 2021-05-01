@@ -84,6 +84,7 @@
     -ms-transform: translateY(-50%);
     transform: translateY(-50%);
     position: absolute;
+    user-select: none;
     margin-left: 1vh;
     height: 5vh;
     width: 5vh;

@@ -11,10 +11,6 @@ function submitButtonClick() {
         return;
     }
 
-    if (!url.startsWith("http://") && !url.startsWith("https://")) {
-        url = "https://" + url;
-    }
-
     fetch("shorten", {
         method: 'POST',
         headers: {
@@ -43,11 +39,9 @@ function copyTitle() {
 }
 
 function validURL(str) {
-    var pattern = new RegExp('^(https?:\\/\\/)?' + // protocol
-        '((([a-z\\d]([a-z\\d-]*[a-z\\d])*)\\.)+[a-z]{2,}|' + // domain name
-        '((\\d{1,3}\\.){3}\\d{1,3}))' + // OR ip (v4) address
-        '(\\:\\d+)?(\\/[-a-z\\d%_.~+]*)*' + // port and path
-        '(\\?[;&a-z\\d%_.~+=-]*)?' + // query string
-        '(\\#[-a-z\\d_]*)?$', 'i'); // fragment locator
-    return !!pattern.test(str);
+    let url = new RegExp("^(https?:\/\/)([a-zA-Z0-9-_~?]+\.)?[a-zA-Z0-9-_~?]+\.[a-zA-Z0-9-_~?]+.*$"); // https://www.google.de/sads
+    let url2 = new RegExp("^(https?:\/\/)([a-zA-Z0-9-_~?]+:)[0-9]+.*$"); // google:3432/jah
+    let url3 = new RegExp("^[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}[0-9]{1,3}\.[0-9]{1,3}(:[0-9]+)?.*$"); // 1.2.3.4:2443/sjdgajhs
+
+    return url.test(str) || url2.test(str) || url3.test(str);
 }
