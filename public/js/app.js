@@ -6,8 +6,8 @@ function submitButtonClick() {
     }
 
     if (!validURL(url)) {
-        document.getElementById("url").classList.add("input-error-border");
-        document.getElementById("button").classList.add("submit-button-error-border");
+        document.getElementById("url").style.borderColor = "red";
+        document.getElementById("button").style.borderColor = "red";
         return;
     }
 
@@ -22,8 +22,8 @@ function submitButtonClick() {
     })
         .then(response => response.json())
         .then(data => {
-            document.getElementById("url").classList.remove("input-error-border");
-            document.getElementById("button").classList.remove("submit-button-error-border");
+            document.getElementById("url").style.borderColor = "#303030";
+        document.getElementById("button").style.borderColor = "#303030";
             document.getElementById("title").innerText = data.shortUrl;
             document.getElementById("title").classList.add("copy-title");
         });

@@ -22,4 +22,4 @@ app.post("/shorten", logic.shortenRoute);
 
 app.get("/u/*", logic.linkRedirectRoute);
 
-app.listen(logic.port, logic.ready);
+app.listen(process.env.PORT, logic.ready);

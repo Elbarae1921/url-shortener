@@ -61,18 +61,27 @@
     padding: 0.5vh 0 0.5vh 1.5vw;
     background-color: #303030;
     border-radius: 7vh 0 0 7vh;
-    border-style: none;
+    border-color: #303030;
+    border-style: solid;
+    border-right: none;
+    border-width: 3px;
     font-size: 4vh;
     color: white;
     width: inherit;
     outline: none;
+
 }
 
 .submit-button {
     background-color: #303030;
     border-radius: 0 7vh 7vh 0;
-    height: inherit;
+    border-color: #303030;
+    border-style: solid;
+    border-left: none;
+    border-width: 3px;
+    height: initial;
     width: 10vh;
+
 }
 
 .submit-button:hover {
@@ -84,8 +93,8 @@
     -ms-transform: translateY(-50%);
     transform: translateY(-50%);
     position: absolute;
+    margin-left: 1.5vh;
     user-select: none;
-    margin-left: 1vh;
     height: 5vh;
     width: 5vh;
     top: 50%;
@@ -95,21 +104,6 @@
 .submit-button-img {
     height: 5vh;
     width: 5vh;
-}
-
-.input-error-border {
-    border-color: red;
-    border-style: solid;
-    border-right: none;
-    border-width: 3px;
-}
-
-.submit-button-error-border {
-    box-sizing: border-box;
-    border-color: red;
-    border-style: solid;
-    border-width: 3px;
-    border-left: none;
 }
 
 a {
