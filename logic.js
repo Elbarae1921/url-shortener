@@ -6,16 +6,23 @@ const p = 4446;
 
 exports.port = p;
 
-exports.shortenRoute = async function(req, res) {
+exports.shortenRoute = async function (req, res) {
     const url = req.body.url;
 
     let r;
     found = false;
 
+    let resDB = await connection.query("select shorted_url from urls where destination_url = ?", [url]);
+
+    if (resDB[0].length != 0) {
+        res.send(JSON.stringify({ "shortUrl": `http://0xffset.de/u/${resDB[0][0].shorted_url}` }));
+        return;
+    }
+
     do {
         r = Math.random().toString(36).substring(7);
 
-        let resDB = await connection.query("select * from urls where shorted_url = ?", [r]);
+        resDB = await connection.query("select * from urls where shorted_url = ?", [r]);
         found = resDB[0].length == 0;
     } while (!found);
 
@@ -24,7 +31,7 @@ exports.shortenRoute = async function(req, res) {
     res.send(JSON.stringify({ "shortUrl": `http://0xffset.de/u/${r}` }));
 }
 
-exports.linkRedirectRoute = async function(req, res) {
+exports.linkRedirectRoute = async function (req, res) {
     const url = req.path.substr(3);
 
     let resDB = await connection.query("select destination_url from urls where shorted_url = ?", [url]);
@@ -36,7 +43,7 @@ exports.linkRedirectRoute = async function(req, res) {
     }
 }
 
-exports.ready = async function() {
+exports.ready = async function () {
     console.log(`URL-shorter listening at http://localhost:${p}`);
 
     try {
